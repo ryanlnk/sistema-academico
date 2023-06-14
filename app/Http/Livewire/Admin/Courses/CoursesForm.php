@@ -15,9 +15,14 @@ class CoursesForm extends Component
         $this->course = new Course;
     }
 
+    public function updated($nomePropriedade){
+        $this->validateOnly($nomePropriedade);
+    }
+
     public function save(){
         $this->validate();
         $this->course->save();
+        session()->flash('toast', 'Course saved successfully');
         return redirect('/courses');
     }
 

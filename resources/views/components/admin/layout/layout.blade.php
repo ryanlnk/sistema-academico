@@ -7,6 +7,8 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
     <title>Sistema Academico</title>
 
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
     @livewireStyles
 </head>
 <body>
@@ -18,6 +20,26 @@
             {{ $slot }}
         </div>
     </main>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    @if (session()->has('toast'))
+    <script>
+        Toastify({
+            text: "{{ session('toast') }}",
+            duration: 2000, //ms
+            gravity: "top", // `top` or `bottom`
+            position: "right", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+                background: "#ccfbf1",
+                borderTop: '2px solid #14b8a6',
+                color: "#134e4a"
+            },
+            onClick: function() {} // Callback after click
+        }).showToast();
+    </script>
+    @endif
 
     @livewireScripts
 </body>
