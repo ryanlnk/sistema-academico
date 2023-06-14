@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
     <title>Sistema Academico</title>
+
+    @livewireStyles
 </head>
 <body>
 
@@ -16,5 +18,7 @@
             {{ $slot }}
         </div>
     </main>
+
+    @livewireScripts
 </body>
 </html>
