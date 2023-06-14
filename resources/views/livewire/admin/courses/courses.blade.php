@@ -7,6 +7,8 @@
             type="text" wire:model="search">
     </div>
 
+    <x-admin.button-add href='createcourses' />
+
     <table class="bg-gradient-to-r from-blue-500 to-blue-700 mx-auto m-5 w-5/6 rounded-lg">
         <thead>
             <tr class="text-blue-50 text-left border-b border-blue-300">

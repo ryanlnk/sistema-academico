@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Livewire\Admin\Courses\Courses;
+use App\Http\Livewire\Admin\Courses\CoursesForm;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +20,5 @@ Route::get('/', function () {
 });
 
 Route::get('/courses', Courses::class);
+
+Route::get('/createcourses', CoursesForm::class);
