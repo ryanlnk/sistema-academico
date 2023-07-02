@@ -23,24 +23,16 @@
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
-    @if (session()->has('toast'))
-    <script>
-        Toastify({
-            text: "{{ session('toast') }}",
-            duration: 2000, //ms
-            gravity: "top", // `top` or `bottom`
-            position: "right", // `left`, `center` or `right`
-            stopOnFocus: true, // Prevents dismissing of toast on hover
-            style: {
-                background: "#ccfbf1",
-                borderTop: '2px solid #14b8a6',
-                color: "#134e4a"
-            },
-            onClick: function() {} // Callback after click
-        }).showToast();
-    </script>
-    @endif
-
     @livewireScripts
+
+    <livewire:toast />
+
+    <script>
+        Livewire.on('confirmDelete', (id) => {
+            if(confirm("Do you want to delete?")) {
+                Livewire.emit('delete', id);
+            }
+        })
+    </script>
 </body>
 </html>

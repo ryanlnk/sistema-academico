@@ -22,7 +22,9 @@
                 <tr class="bg-gray-100 border-b border-gray-300 hover:bg-gray-300">
                     <td class="px-4 py-3">{{ $course->name }}</td>
                     <td class="px-4 py-3">
-                        <x-admin.button-edit href="/courses/{{$course->id}}/edit"/>
+                        <x-admin.button-edit href="/courses/{{$course->id}}/edit" />
+
+                        <x-admin.button-delete wire:click="$emit('confirmDelete', '{{$course->id}}')" />
                     </td>
                 </tr>
             @empty

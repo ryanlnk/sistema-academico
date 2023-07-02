@@ -9,6 +9,7 @@ class Courses extends Component
 {
     public $courses;
     public $search = '';
+    protected $listeners = ['delete'];
 
     public function filter (){
         if(empty($this->search)){
@@ -16,6 +17,11 @@ class Courses extends Component
         } else {
             $this->courses = Course::where('name', 'like', "%$this->search%")->get();
         }
+    }
+
+    public function delete($id) {
+        Course::destroy($id);
+        $this->emit('toast', 'Course deleted successfully!');
     }
 
     public function render()
