@@ -22,3 +22,5 @@ Route::get('/', function () {
 Route::get('/courses', Courses::class);
 
 Route::get('/createcourses', CoursesForm::class);
+
+Route::get('/courses/{course}/edit', CoursesForm::class);

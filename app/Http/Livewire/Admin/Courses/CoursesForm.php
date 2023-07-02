@@ -11,8 +11,8 @@ class CoursesForm extends Component
 
     protected $rules = ['course.name' => 'required|string|max:100|min:2|bail'];
 
-    public function mount(){
-        $this->course = new Course;
+    public function mount(Course $course){
+        $this->course = $course;
     }
 
     public function updated($nomePropriedade){

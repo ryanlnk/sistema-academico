@@ -13,6 +13,7 @@
         <thead>
             <tr class="text-blue-50 text-left border-b border-blue-300">
                 <th class="px-4 py-3">Name</th>
+                <th class="px-4 py-3"></th>
             </tr>
         </thead>
 
@@ -20,6 +21,9 @@
             @forelse ($courses as $course)
                 <tr class="bg-gray-100 border-b border-gray-300 hover:bg-gray-300">
                     <td class="px-4 py-3">{{ $course->name }}</td>
+                    <td class="px-4 py-3">
+                        <x-admin.button-edit href="/courses/{{$course->id}}/edit"/>
+                    </td>
                 </tr>
             @empty
                 <tr class="text-center bg-gray-100 border-b border-gray-300 hover:bg-gray-300">
